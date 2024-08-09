@@ -255,7 +255,7 @@ export default {
 		},
 		defaultReminderOptions() {
 			const defaultAlarms = getDefaultAlarms().map(seconds => {
-				const label = seconds === 0 ? t('calendar', "at event's start") : t('calendar', "{name} before the event's starts", { name: moment.duration(Math.abs(seconds) * 1000).locale(this.locale).humanize() })
+				const label = seconds === 0 ? t('calendar', "at event's start") : t('calendar', "{humanizedTime} before the event's starts", { humanizedTime: moment.duration(Math.abs(seconds) * 1000).locale(this.locale).humanize() })
 				return {
 					label,
 					value: seconds.toString(),
